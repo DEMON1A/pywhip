@@ -41,7 +41,7 @@ def main(data_file, specifications_file, output_file="index.html",
     click.echo("")
 
     with open(specifications_file) as schema_file:
-        specifications = yaml.load(schema_file)
+        specifications = yaml.safe_load(schema_file)
 
     whip_it = whip_csv(data_file, specifications, delimiter)
 
